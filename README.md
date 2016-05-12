@@ -1,6 +1,6 @@
 ![mobble](http://cloud.scott.ee/images/mobble.png)
 
-# The Vaan Group
+# Content Management System
 
 * Status: ✔ In Development
 * Contributors: [@randychampagne](http://twitter.com/randychampagne)
@@ -15,7 +15,9 @@
 
 ## About
 
-Comming Soon
+**The Vaan Group<br>Brooklyn, NY**
+
+Description Comming Soon
 
 
 
