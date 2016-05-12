@@ -15,7 +15,7 @@
 
 ## About
 
-**The Vaan Group<br>Brooklyn, NY**
+**[The Vaan Group](http://vaangroup.com/)<br>Brooklyn, NY**
 
 Description Comming Soon
 
