@@ -1,0 +1,32 @@
+{
+  "name": "thevaangroup",
+  "description": "We're a Brooklyn New York based Digital Design Firm",
+  "dependencies": {
+    "jade": "1.9.x",
+    "babelify": "^7.2.0",
+    "css-pipeline": "0.3.x",
+    "jquery": "^2.2.3",
+    "js-pipeline": "^0.2.2",
+    "jstransformer-marked": "^1.0.0",
+    "marked": "0.3.x",
+    "marked": "0.3.x",
+    "stylus": "0.50.x",
+    "coffee-script": "1.9.x",
+    "autoprefixer-stylus": "0.5.x",
+    "axis": "0.3.x",
+    "marked": "0.3.x",
+    "rupture": "0.6.x",
+    "roots": "3.0.x",
+    "roots-browserify": "^0.5.0",
+    "roots-contentful": "0.0.7",
+    "roots-image-pipeline": "^0.3.0",
+    "rupture": "0.6.x",
+    "stylus": "0.52.x",
+    "ship": "0.2.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thevaangroup/cms.git"
+  },
+  "license": "(GPL-3.0)"
+}
