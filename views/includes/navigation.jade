@@ -1,3 +1,7 @@
+//- ToDo: solve navigation bugs
+	- navigating to index.html fails when I click it from a case study page
+
+
 
 .nav-button-holder
 	.nav-button.vis-m
@@ -9,11 +13,13 @@
 	nav
 		ul
 			li
-				a(href="index.html") Featured Projects
+				a(href="/index.html") Featured Projects
 				ul
-					//- console.log(JSON.stringify(contentful.posts,4))
+					//- to display payload content in terminal
+					//- for post in contentful.posts
+							console.log(JSON.stringify(post,4))
+
 					- for project in contentful.posts
-						//- console.log(JSON.stringify(project,4))
 						if (project.sys.contentType.sys.id === "featuredProject")
 							li: a(href= project._url)= project.clientName
 			li
