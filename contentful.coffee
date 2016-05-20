@@ -5,6 +5,6 @@ module.exports =
   content_types:                    # remove these object braces once the config below is filled out
     posts:                          # data will be made available through this key on the `contentful` object in your templates
       id: 'featuredProject'                    # ID of your content type
-      template: 'views/_featured_projects.jade'  # if present a single page view will be created for each entry in the content type
-      path: (entry) -> "featured_projects/#{entry.slug}"             # override function for generating single page file path, passed in the entry object
+      template: 'views/templates/_featured_projects.jade'  # if present a single page view will be created for each entry in the content type
+      path: (entry) -> "case-studies/#{entry.slug}"             # override function for generating single page file path, passed in the entry object
     #  filters: {}                   # passes filters to the call to contentful's API, see contentful's docs for more info
