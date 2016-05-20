@@ -11,27 +11,11 @@
 			li
 				a(href="index.html") Featured Projects
 				ul
-					li
-						a(href="ann.html") Ann Taylor
-					li
-						a(href="juisi.html") JUISI 
-					br
-					li
-						a(href="loft.html") LOFT
-					li
-						a(href="lougrey.html") Lou &amp; Grey
-					li
-						a(href="goattape.html") Goat Tape
-					li
-						a(href="niucoco.html") Niucoco
-					li
-						a(href="onetwentyone.html") 121 Group
-					li
-						a(href="offsite.html") Offsite
-					li
-						a(href="sko.html") Sko There
-					li
-						a(href="rvs.html") RVS Eyewear
+					//- console.log(JSON.stringify(contentful.posts,4))
+					- for project in contentful.posts
+						//- console.log(JSON.stringify(project,4))
+						if (project.sys.contentType.sys.id === "featuredProject")
+							li: a(href= project._url)= project.clientName
 			li
 				a(href="#") Selected Works
 				ul
