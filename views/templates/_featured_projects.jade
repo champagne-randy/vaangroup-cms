@@ -3,6 +3,12 @@
 	- prep for roots-contentful integration by making this template abstract 
 
 
+	h4= entry.title
+	img(src= asset(entry.featuredImage))
+	//-p= post.date
+	!= marked(entry.body)
+
+
 
 extends ./_layout
 
@@ -15,19 +21,20 @@ block theContent
 		.content-holder.elem.scale-bg2.transition3
 			// .fixed-title
 			.fixed-title
-				span Ann Taylor
+				span= entry.clientName
 
 			// =============== Content  ===============
 			.content
 				// Page title section
 				section.parallax-section
 					.overlay
-					.bg(style="background-image:url(img/ann_taylor/ann-background.jpg)" data-top-bottom="transform: translateY(200px);" data-bottom-top="transform: translateY(-200px);")
+						//- asset(entry.backgroundImage)
+					.bg(style="background-image:url(#{asset(entry.backgroundImage)})" data-top-bottom="transform: translateY(200px);" data-bottom-top="transform: translateY(-200px);")
 					.container
-						h2 Ann Taylor
+						h2= entry.clientName
 						.separator-image
-							img(src="img/separator.png" alt="")
-						h3.subtitle A fashion behemoth gets a digital makeover.
+							img(src="../img/separator.png" alt="")
+						h3.subtitle= entry.tagLine
 					a.custom-scroll-link.sect-scroll(href="#sec1")
 						i.fa.fa-angle-double-down
 				// Page title section end
@@ -39,15 +46,14 @@ block theContent
 							// project images
 							.col-md-7
 								.vertical-gallery.popup-gallery
-									.box-item
-										a(href="img/ann_taylor/at_in_store_app_mock.png")
-											img.respimg(src="img/ann_taylor/at_in_store_app_mock.png" alt="")
-									.box-item
-										a(href="img/ann_taylor/at_pdp_desktop_mocks.png")
-											img.respimg(src="img/ann_taylor/at_pdp_desktop_mocks.png" alt="")
-									.box-item
-										a(href="img/ann_taylor/at_style_guide_mock.png")
-											img.respimg(src="img/ann_taylor/at_style_guide_mock.png" alt="")
+									- for image in entry.images
+										.box-item
+											a(href= asset(image))
+												img.respimg(src= asset(image))
+								
+
+							//- ToDo:
+								- figure out how to configure this navigation
 								.project-box
 									.content-nav
 										ul
@@ -62,15 +68,18 @@ block theContent
 										.p-all
 											a(href="index.html")
 												i.fa.fa-th-large
+							//- end ToDo -
+
+
 							// project images end
 							// project  information
 							.col-md-5
 								.fix-box
 									.project-box
 										h3 Details
-										p Founded in 1954, Ann Taylor has, over the years, established itself as one of the most recognizable brand names in women's classic apparel. Traditionally a brick & mortar-focused business, in recent years, the mass proliferation of well-designed, competing e-commerce stores, and an increasingly tech-savvy consumer base signaled that it was time to revamp ANNTAYLOR.com. With a keen eye on the details that make for an easy-to-navigate interface and delightful user experience across all viewing devices, the brand tapped The Vaan Group as their go-to UX design team to lead the charge.
+										p= entry.description
 										p View site: 
-											a(href="http://www.anntaylor.com/") www.anntaylor.com
+											a(href= entry.cilentUrl target='_blank')= entry.clientUrlLabel
 				// Content end
 				// Share container
 				.share-container.isShare(data-share="['facebook','pinterest','googleplus','twitter','linkedin']")
