@@ -1,3 +1,9 @@
+//- 
+	ToDo:
+	- decide if it's worth it to create a Testimonials content type
+
+
+
 extends ./templates/_layout
 
 block theContent
@@ -92,6 +98,16 @@ block theContent
 							img(src="img/separator.png" alt="")
 						.testimonials-slider-holder
 							.testimonials-slider.owl-carousel
+								// testimonial
+								//- for project in contentful.featuredProjects
+									if project.testimonialHeader && project.testimonialBody
+										.item
+											.testi-item
+												h3= project.testimonialHeader
+												!= marked(project.testimonialBody)
+								// testimonial end
+
+
 								// 1
 								.item
 									.testi-item

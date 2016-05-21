@@ -1,12 +1,6 @@
 //-
 	ToDo:
-	- prep for roots-contentful integration by making this template abstract 
-
-
-	h4= entry.title
-	img(src= asset(entry.featuredImage))
-	//-p= post.date
-	!= marked(entry.body)
+	- work out inter-project navigation
 
 
 
@@ -21,7 +15,7 @@ block theContent
 		.content-holder.elem.scale-bg2.transition3
 			// .fixed-title
 			.fixed-title
-				span= entry.clientName
+				span= entry.navBarLabel
 			// =============== Content  ===============
 			.content.full-height
 				// =============== description column  ===============-->
@@ -29,9 +23,10 @@ block theContent
 					h3= entry.clientName
 					.separator
 					.clearfix
-					p= entry.description
-					p View site: 
-						a(href= entry.cilentUrl target='_blank')= entry.clientUrlLabel
+					!= marked(entry.description)
+					if entry.cilentUrl && entry.clientUrlLabel
+						p View site: 
+							a(href= entry.cilentUrl target='_blank')= entry.clientUrlLabel
 					h4 Info
 
 

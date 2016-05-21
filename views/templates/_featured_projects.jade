@@ -1,3 +1,10 @@
+//-
+	ToDo:
+	- work out inter-project navigation
+	- configure the slider feature (see offsite.html)
+
+
+
 extends ./_layout
 
 block theContent
@@ -9,7 +16,7 @@ block theContent
 		.content-holder.elem.scale-bg2.transition3
 			// .fixed-title
 			.fixed-title
-				span= entry.clientName
+				span= entry.navBarLabel
 
 			// =============== Content  ===============
 			.content
@@ -41,16 +48,41 @@ block theContent
 
 							//- ToDo:
 								- figure out how to configure this navigation
+							
+								
+								- var i, prev, next, prevUrl, nextUrl
+								- i = -1
+								//- console.log(projects)
+								- var len = contentful.featuredProjects
+
+								- for projects in contentful.featuredProjects
+									for project in projects
+										if project
+											- console.log(project)
+
+											i += 1;
+											
+											if project.clientName === entry.clientName
+												i ===0 ? prev = len-1 : prev = i-1;
+												i ===len-1 ? next = 0 : next = i+1;
+												prevUrl = projects[prev].slug
+												nextUrl = projects[next].slug
+												break
+
+													
+
 								.project-box
 									.content-nav
 										ul
 											li
-												a(href="feast.html")
+												//-a(href="feast.html")
+												a(href="#{prevUrl}.html")
 													i.fa.fa-long-arrow-left
 											li
 												span &#47;
 											li
-												a(href="juisi.html")
+												//-a(href="juisi.html")
+												a(href="#{nextUrl}.html")
 													i.fa.fa-long-arrow-right
 										.p-all
 											a(href="index.html")
@@ -64,9 +96,11 @@ block theContent
 								.fix-box
 									.project-box
 										h3 Details
-										p= entry.description
-										p View site: 
-											a(href= entry.cilentUrl target='_blank')= entry.clientUrlLabel
+										//-p= entry.description
+										!= marked(entry.description)
+										if entry.cilentUrl && entry.clientUrlLabel
+											p View site: 
+												a(href= entry.cilentUrl target='_blank')= entry.clientUrlLabel
 				// Content end
 				// Share container
 				.share-container.isShare(data-share="['facebook','pinterest','googleplus','twitter','linkedin']")
