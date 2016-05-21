@@ -1,15 +1,3 @@
-//-
-	ToDo:
-	- prep for roots-contentful integration by making this template abstract 
-
-
-	h4= entry.title
-	img(src= asset(entry.featuredImage))
-	//-p= post.date
-	!= marked(entry.body)
-
-
-
 extends ./_layout
 
 block theContent
@@ -28,7 +16,6 @@ block theContent
 				// Page title section
 				section.parallax-section
 					.overlay
-						//- asset(entry.backgroundImage)
 					.bg(style="background-image:url(#{asset(entry.backgroundImage)})" data-top-bottom="transform: translateY(200px);" data-bottom-top="transform: translateY(-200px);")
 					.container
 						h2= entry.clientName

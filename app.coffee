@@ -23,7 +23,10 @@ module.exports =
     '.gitignore', 
     'ship.*conf',
     '.git/*',
-    '.DS_Store'
+    '.DS_Store',
+    'Makefile',
+    'CONTRIBUTING.md',
+    'contentful.coffee'
   ]
 
   stylus:

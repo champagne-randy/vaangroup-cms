@@ -3,6 +3,12 @@
 	- prep for roots-contentful integration by making this template abstract 
 
 
+	h4= entry.title
+	img(src= asset(entry.featuredImage))
+	//-p= post.date
+	!= marked(entry.body)
+
+
 
 extends ./_layout
 
@@ -15,18 +21,22 @@ block theContent
 		.content-holder.elem.scale-bg2.transition3
 			// .fixed-title
 			.fixed-title
-				span Ann Taylor
+				span= entry.clientName
 			// =============== Content  ===============
 			.content.full-height
 				// =============== description column  ===============-->
 				.fixed-info-container
-					h3 Kunhardt Films
+					h3= entry.clientName
 					.separator
 					.clearfix
-					p On the heels of a successful debut of their latest film, "Jim: The James Foley Story," Kunhardt Films wanted to update their website. We worked with the principals to create a site that embodies the ethos of this production house and showcases their portfolio of projects in a modern and interactive way.
+					p= entry.description
 					p View site: 
-						a(href="http://kunhardtfilms.com/") www.kunhardtfilms.com
+						a(href= entry.cilentUrl target='_blank')= entry.clientUrlLabel
 					h4 Info
+
+
+				//- ToDo:
+					- figure out how to configure this navigation
 					.content-nav
 						ul
 							li
@@ -40,6 +50,10 @@ block theContent
 						.p-all
 							a(href="index.html")
 								i.fa.fa-th-large
+				//- end ToDo -
+
+
+
 				// description column end
 				// portfolio  Images
 				.resize-carousel-holder.vis-info
@@ -47,9 +61,9 @@ block theContent
 						.swiper-wrapper
 							// =============== 1 ===============
 							.swiper-slide
-								.bg.bg-slider(style="background-image:url(img/kfilms/kf-films.png)")
+								.bg.bg-slider(style="background-image:url(#{asset(entry.backgroundImage)})")
 								.zoomimage
-									img.intense(src="img/kfilms/kf-films.png" alt="")
+									img.intense(src= asset(entry.backgroundImage) alt="")
 									i.fa.fa-expand
 							// 1 end
 						.pagination
