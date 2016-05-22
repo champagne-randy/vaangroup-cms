@@ -1,9 +1,3 @@
-//-
-	ToDo:
-	- work out inter-project navigation
-
-
-
 extends ./_layout
 
 block theContent
@@ -29,26 +23,39 @@ block theContent
 							a(href= entry.cilentUrl target='_blank')= entry.clientUrlLabel
 					h4 Info
 
+					//- This logic handles the inter-project navigation
+					- var selArr = []
+					- for project in contentful.selectedWorks
+						- selArr.push(project._url)
 
-				//- ToDo:
-					- figure out how to configure this navigation
+					//- set curUrl
+					- var curUrl = entry._url
+					
+					//- fetch prevUrl
+					- var prevUrl = (selArr.indexOf(curUrl) === 0) ? selArr[selArr.length-1] : selArr[selArr.indexOf(curUrl) - 1];
+
+					//- fetch nextUrl
+					- var nextUrl = (selArr.indexOf(curUrl) < selArr.length - 1) ? selArr[selArr.indexOf(curUrl) + 1] : selArr[0];
+
+					//- log results
+						- console.log('selArr is:\n',selArr)
+						- console.log('Previous url is: ', prevUrl)
+						- console.log('Current url is: ', curUrl)
+						- console.log('Next url is: ', nextUrl)
+				
 					.content-nav
 						ul
 							li
-								a(href="festy.html")
+								a(href="#{prevUrl}")
 									i.fa.fa-long-arrow-left
 							li
 								span &#47;
 							li
-								a(href="strengthinnumbers.html")
+								a(href="#{nextUrl}")
 									i.fa.fa-long-arrow-right
 						.p-all
 							a(href="index.html")
 								i.fa.fa-th-large
-				//- end ToDo -
-
-
-
 				// description column end
 				// portfolio  Images
 				.resize-carousel-holder.vis-info

@@ -5,6 +5,8 @@
 
 
 
+
+
 extends ./_layout
 
 block theContent
@@ -44,52 +46,43 @@ block theContent
 										.box-item
 											a(href= asset(image))
 												img.respimg(src= asset(image))
+
+								//- This logic handles the inter-project navigation
+								- var featArr = []
+								- for project in contentful.featuredProjects
+									- featArr.push(project._url)
+
+								//- set curUrl
+								- var curUrl = entry._url
 								
+								//- fetch prevUrl
+								- var prevUrl = (featArr.indexOf(curUrl) === 0) ? featArr[featArr.length-1] : featArr[featArr.indexOf(curUrl) - 1];
 
-							//- ToDo:
-								- figure out how to configure this navigation
-							
-								
-								- var i, prev, next, prevUrl, nextUrl
-								- i = -1
-								//- console.log(projects)
-								- var len = contentful.featuredProjects
+								//- fetch nextUrl
+								- var nextUrl = (featArr.indexOf(curUrl) < featArr.length - 1) ? featArr[featArr.indexOf(curUrl) + 1] : featArr[0];
 
-								- for projects in contentful.featuredProjects
-									for project in projects
-										if project
-											- console.log(project)
-
-											i += 1;
-											
-											if project.clientName === entry.clientName
-												i ===0 ? prev = len-1 : prev = i-1;
-												i ===len-1 ? next = 0 : next = i+1;
-												prevUrl = projects[prev].slug
-												nextUrl = projects[next].slug
-												break
-
+								//- log results
+									- console.log('featArr is:\n',featArr)
+									- console.log('Previous url is: ', prevUrl)
+									- console.log('Current url is: ', curUrl)
+									- console.log('Next url is: ', nextUrl)
 													
-
 								.project-box
 									.content-nav
 										ul
 											li
 												//-a(href="feast.html")
-												a(href="#{prevUrl}.html")
+												a(href="#{prevUrl}")
 													i.fa.fa-long-arrow-left
 											li
 												span &#47;
 											li
 												//-a(href="juisi.html")
-												a(href="#{nextUrl}.html")
+												a(href="#{nextUrl}")
 													i.fa.fa-long-arrow-right
 										.p-all
 											a(href="index.html")
 												i.fa.fa-th-large
-							//- end ToDo -
-
-
 							// project images end
 							// project  information
 							.col-md-5

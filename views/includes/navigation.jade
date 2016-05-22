@@ -19,16 +19,15 @@
 					//- sort featuredProjects
 					- contentful.featuredProjects.sort(function(a,b) { return a.orderById - b.orderById;})
 
-					//- to be used in when compiling urls in _featured_projects.jade
-					- var featProjArr = contentful.featuredProjects
-
 					- for project in contentful.featuredProjects
 						//- to display payload content in terminal
 						//- console.log(JSON.stringify(project,4))
+
 						
 						//- set url for each featuredProject
 						li(style="display:block; clear:left; margin-bottom:-2px;")
 							a(href= project._url)= project.navBarLabel
+
 			
 			//- selectedWorks collection
 			li
