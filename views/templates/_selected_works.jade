@@ -63,9 +63,9 @@ block theContent
 						.swiper-wrapper
 							// =============== 1 ===============
 							.swiper-slide
-								.bg.bg-slider(style="background-image:url(#{asset(entry.backgroundImage)})")
+								.bg.bg-slider(style="background-image:url(#{asset(entry.backgroundImage, { q: 50})})")
 								.zoomimage
-									img.intense(src= asset(entry.backgroundImage) alt="")
+									img.intense(src= asset(entry.backgroundImage, { q: 50}) alt="")
 									i.fa.fa-expand
 							// 1 end
 						.pagination

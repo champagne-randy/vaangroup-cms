@@ -25,7 +25,7 @@ block theContent
 				// Page title section
 				section.parallax-section
 					.overlay
-					.bg(style="background-image:url(#{asset(entry.backgroundImage)})" data-top-bottom="transform: translateY(200px);" data-bottom-top="transform: translateY(-200px);")
+					.bg(style="background-image:url(#{asset(entry.backgroundImage, { q: 50})})" data-top-bottom="transform: translateY(200px);" data-bottom-top="transform: translateY(-200px);")
 					.container
 						h2= entry.clientName
 						.separator-image
@@ -44,8 +44,8 @@ block theContent
 								.vertical-gallery.popup-gallery
 									- for image in entry.images
 										.box-item
-											a(href= asset(image))
-												img.respimg(src= asset(image))
+											a(href= asset(image, { q: 50}))
+												img.respimg(src= asset(image, { q: 50}))
 
 								//- This logic handles the inter-project navigation
 								- var featArr = []
