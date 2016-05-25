@@ -13,6 +13,8 @@ body
 		i(class="fa fa-refresh fa-spin")
 	// /.loader
 
+	include ./includes/modal
+
 	// ================= main start ================ 
 	#main
 		// =============== header =============== 
@@ -81,6 +83,9 @@ body
 
 	// =============== scripts  ===============
 	!= js()
+
+	//- slick modals scripts
+		script(type="text/javascript" src="js/jquery.slick-modals.min.js")
 
 
 

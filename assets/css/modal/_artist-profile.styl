@@ -1,0 +1,124 @@
+@import "./modal/_base.styl"
+@import "./modal/_functions.styl"
+
+// globals
+font-size				= 1.4em
+width 					= getRespVal(2000,vp-width)
+height 					= getRespVal(1316,vp-height)
+
+
+
+.profile-container
+	width 				width
+	height 				height
+	
+
+.entry
+	display				block
+	width 				100%
+	height 				100%
+	color 				#ffffff
+	
+
+.name-group
+	display				inline-block
+	padding				getRespVal(18,vp-width) getRespVal(18,vp-width) 0 getRespVal(18,vp-width)
+	width 				getRespVal(800,vp-width)
+	height 				getRespVal(60,vp-height)
+	background-color 	rgba(0, 0, 0, 0.48)
+	
+
+.name-group h3
+	display 			inline-block
+	padding-right		getRespVal(400,vp-width)
+	margin-right		auto
+	width 				fit-content
+	//min-width			getRespVal(2500,vp-width)
+	
+
+.name-group span
+	display				inline-block
+	position			relative
+	float				right
+	padding 			0 getRespVal(100,vp-width) 0 getRespVal(100,vp-width)
+	width 				getRespVal(120,vp-width)
+	//text-align			right
+	
+
+.name-group i
+	display				inline-block
+	//margin				0 getRespVal(60,vp-width)
+	//padding-left		getRespVal(300,vp-width)
+	//padding-right		getRespVal(300,vp-width)
+	width 				getRespVal(25,vp-width)
+	
+
+.fab-container
+	position			fixed
+	position			absolute
+	bottom				0
+	left				0
+	padding-left		getRespVal(30px,vp-width)
+	padding-bottom		getRespVal(30px,vp-width)
+	
+
+.fab
+	display 			block
+	width 				getRespVal(800,vp-width)
+	
+
+.speech-bubble
+	display				none // block start hidden and get activated on hover
+	margin-left			getRespVal(250,vp-width)
+	margin-right		getRespVal(30,vp-width)
+	width 				getRespVal(281,vp-width)
+
+
+.speech-text
+	color 				#000
+	
+	position			absolute
+	top			 		getRespVal(100,vp-width)
+	left			 	getRespVal(1100,vp-width)
+	width			 	fit-content
+	//height			 	100%
+	z-index			 	10
+	//background-color	rgba(0,0,0,0.5); /*dim the background*/
+		
+
+.speech-text img
+	display				inline-block
+	width 				getRespVal(350,vp-width)
+	
+
+.speech-text p
+	padding-bottom 		getRespVal(140,vp-height)
+	
+
+.speech-text a
+	color 				#008CFF
+	text-decoration 	underline
+	
+
+
+// hide & seek
+
+
+    
+//.entry.active>.fab-container>.fab:hover .speech-bubble 
+//.fab:hover .speech-bubble 
+//    display				block
+	//margin-left			getRespVal(250,vp-width)
+	//margin-right		getRespVal(30,vp-width)
+	//width 				getRespVal(281,vp-width)
+
+	
+	
+	
+	
+
+
+
+
+
+

@@ -13,3 +13,5 @@ module.exports =
       template: 'views/templates/_selected_works.jade'
       path: (entry) -> "#{entry.slug}"
       #filters: {}
+    featuredArtist:
+      id: 'featuredArtist'
