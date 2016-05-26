@@ -21,7 +21,7 @@ height 					= getRespVal(1316,vp-height)
 	
 
 .name-group
-	display				inline-block
+	display				block // inline-block
 	padding				getRespVal(18,vp-width) getRespVal(18,vp-width) 0 getRespVal(18,vp-width)
 	width 				getRespVal(800,vp-width)
 	height 				getRespVal(60,vp-height)
@@ -54,36 +54,43 @@ height 					= getRespVal(1316,vp-height)
 	
 
 .fab-container
-	position			fixed
-	position			absolute
+	position			fixed 						
+	position			absolute					
 	bottom				0
-	left				0
-	padding-left		getRespVal(30px,vp-width)
-	padding-bottom		getRespVal(30px,vp-width)
+	left				0							
+	padding-left		getRespVal(30px,vp-width)	
+	padding-bottom		getRespVal(30px,vp-width)	
+	width 				fit-content					
 	
 
 .fab
 	display 			block
-	width 				getRespVal(800,vp-width)
+	position 			fixed
+	left 				getRespVal(30,vp-width)
+	bottom 				getRespVal(60,vp-height)
+	width 				fit-content // getRespVal(800,vp-width)
 	
 
 .speech-bubble
 	display				none // block start hidden and get activated on hover
-	margin-left			getRespVal(250,vp-width)
-	margin-right		getRespVal(30,vp-width)
-	width 				getRespVal(281,vp-width)
+	position			fixed
+	left 				getRespVal(80,vp-width)
+	bottom 				getRespVal(200,vp-height)
+	//margin-left		getRespVal(250,vp-width)
+	//margin-right		getRespVal(30,vp-width)
+	width 				fit-content // getRespVal(281,vp-width)
 
 
 .speech-text
-	color 				#000
-	
 	position			absolute
-	top			 		getRespVal(100,vp-width)
-	left			 	getRespVal(1100,vp-width)
+	top			 		getRespVal(180,vp-height)
+	left			 	getRespVal(800,vp-width)
 	width			 	fit-content
 	//height			 	100%
 	z-index			 	10
 	//background-color	rgba(0,0,0,0.5); /*dim the background*/
+	color 				#000
+	//font-size			font-size * 1.05
 		
 
 .speech-text img
